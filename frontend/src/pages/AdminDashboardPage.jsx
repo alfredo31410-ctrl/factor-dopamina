@@ -48,7 +48,7 @@ export default function AdminDashboardPage() {
 
   const onLogout = async () => {
     await logout();
-    navigate("/admin/login");
+    window.location.href = "/admin/login";
   };
 
   const onDelete = async (id) => {

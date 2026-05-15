@@ -151,7 +151,7 @@ export default function HomePage() {
             <Link
               key={c.id}
               to={`/cursos/${c.slug}`}
-              data-testid={`featured-course-${c.slug}`}
+              data-testid={`course-card-${c.slug}`}
               className="fd-card flex flex-col group"
             >
               <div className="aspect-[4/3] overflow-hidden bg-black relative">
