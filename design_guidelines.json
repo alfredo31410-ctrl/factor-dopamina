@@ -1,0 +1,125 @@
+{
+  "theme": "dark",
+  "archetype": "Hybrid: Archetype 2 (Performance Pro) + Archetype 7 (Electric & Neon)",
+  "brand_name": "Factor Dopamina",
+  "domain": "Self-improvement, Motivation, High Performance, Discipline",
+  "colors": {
+    "background": {
+      "base": "#0A0A0A",
+      "surface": "#121212",
+      "surface_elevated": "#1A1A1A"
+    },
+    "primary": {
+      "DEFAULT": "#CCFF00",
+      "hover": "#D4FF33",
+      "glow": "rgba(204, 255, 0, 0.4)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A",
+      "accent": "#CCFF00"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.1)",
+      "accent": "rgba(204, 255, 0, 0.2)",
+      "focus": "#CCFF00"
+    },
+    "status": {
+      "success": "#CCFF00",
+      "error": "#FF3B30",
+      "warning": "#FF9F0A"
+    }
+  },
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "mono_font": "JetBrains Mono",
+    "rules": {
+      "h1": "text-5xl md:text-6xl+ font-black tracking-tighter uppercase",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+      "h3": "text-xl md:text-2xl font-semibold tracking-tight",
+      "body": "text-base leading-relaxed text-zinc-400",
+      "overline": "text-xs font-bold tracking-[0.2em] uppercase text-[#CCFF00]"
+    }
+  },
+  "spacing_and_layout": {
+    "general": "Generous Spacing Philosophy. p-8 to p-24 for sections.",
+    "marketing_grid": "Bento Grid Protocol (Tetris Mode): grid-cols-1 md:grid-cols-12, wide gaps (gap-8 to gap-12). Aggressive asymmetry.",
+    "dashboard_grid": "Control Room Grid Protocol: grid-cols-1 md:grid-cols-4, tight gaps (gap-4 to gap-6). Dense layout.",
+    "containers": "Max-w-7xl mx-auto for marketing, full-width w/ sidebars for dashboard."
+  },
+  "surfaces": {
+    "cards": "Flat solid background (#121212), 1px subtle border (border-white/10). No soft drop shadows. Use sharp inner glow or solid 2px offset shadows on hover.",
+    "glassmorphism": "Used ONLY for sticky headers. backdrop-blur-xl bg-black/60, 1px bottom border border-white/10.",
+    "borders": "Expose the skeleton where possible. Technical look."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#CCFF00] text-black font-bold uppercase tracking-wide hover:bg-[#D4FF33] transition-colors rounded-none or max rounded-sm",
+      "secondary": "bg-transparent border border-white/20 text-white hover:border-[#CCFF00] hover:text-[#CCFF00] font-bold uppercase transition-colors"
+    },
+    "inputs": "bg-[#121212] border border-white/10 focus:border-[#CCFF00] text-white rounded-none",
+    "badges": "bg-black border border-[#CCFF00]/50 text-[#CCFF00] text-xs px-2 py-1 uppercase tracking-widest",
+    "tables": "Shadcn/UI table, customized with dark rows, hover state bg-white/5, accent border on active row."
+  },
+  "motion_and_interactions": {
+    "scroll": "Lenis for smooth momentum scrolling across the site.",
+    "hover": "Text color shifts, subtle translateY(-2px), borders glow #CCFF00.",
+    "entrance": "Framer Motion staggered fade-up for bento grid items and course cards.",
+    "marquee": "Use react-fast-marquee. Massive outline text (text-8xl+ font-black text-transparent stroke-white/5) running in background."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/d4808d43ae352dbec195e6e8331120b95352d2c3cebc5b566a935fb454f42a53.png",
+      "description": "Abstract futuristic 3D neural network glowing in neon green. Dark void. Use with a bg-black/40 overlay to ensure text contrast."
+    },
+    "pillars_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/cfdda5e57247114e26a74ca42308b7c50b0d4dde2540d6cce93ad525da0b9ed4.png",
+      "description": "Macro photography of abstract glowing neon green energy lines on dark obsidian background."
+    },
+    "community_transformation": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/a16e1f5d58d8d516e431f0491bd9f4103668941f4188ccc435d690ad3352a070.png",
+      "description": "Silhouette of a confident athletic man walking towards a bright neon green glowing light."
+    },
+    "course_covers": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/625e3d9aa8ca582c0f4154fa52dc7088b18977534242809b612d77844d983539.png",
+        "description": "Abstract glowing neon green geometric shapes and dopamine molecule structures."
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/4a1c95e87504e08826b7817b9c2f406f05ceab0219a67dc00c34d4391af0bfb1.png",
+        "description": "Minimalist futuristic glowing green grid fading into total black darkness."
+      }
+    ],
+    "athlete_inspiration": [
+      {
+        "url": "https://images.unsplash.com/photo-1710736460914-4a7f22d736c4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxhdGhsZXRlJTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzc4ODc0ODQ0fDA&ixlib=rb-4.1.0&q=85",
+        "description": "A man kneeling down on a basketball court in the dark."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1648235692910-947cb90ddd97?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHxhdGhsZXRlJTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzc4ODc0ODQ0fDA&ixlib=rb-4.1.0&q=85",
+        "description": "A dark hallway with a neon sign for fitness motivation."
+      }
+    ]
+  },
+  "pages": {
+    "Home": "Hero with 'Ver cursos' CTA + Neural background. Marquee 'DISCIPLINA • ENFOQUE • ENERGÍA'. Pillars bento grid. Course cards section. Community section with transformation image. Dark massive footer.",
+    "Cursos": "Grid of course cards, dark theme, sharp edges.",
+    "Course_Detail": "Immersive hero layout for course details, 'Hotmart' CTA button highlighted in #CCFF00.",
+    "Contacto": "Clean, minimal form with neon green focus states.",
+    "Admin_Login": "Technical terminal-like login screen, centered bento card.",
+    "Admin_Dashboard": "Sidebar navigation. Top-left hero metric. Modular widgets for CRUD courses. Green used ONLY for active/success states."
+  },
+  "instructions_to_main_agent": [
+    "Do NOT use 'Inter' for headings. Use 'Outfit'. Use 'Manrope' for body.",
+    "All backgrounds must be dark (#0A0A0A or #121212). NEVER use pure white backgrounds.",
+    "Use '#CCFF00' as the primary accent color for CTAs, active states, and decorative borders.",
+    "Apply 'data-testid' to all buttons, inputs, and interactive elements.",
+    "Install and use 'lucide-react' for icons.",
+    "Use pure HTML + Tailwind for marketing page structures instead of Shadcn cards to allow creative overlaps.",
+    "Use Shadcn UI for the Admin Dashboard and customize it to match the technical/dark aesthetic.",
+    "Hero images MUST have a background overlay (e.g., bg-black/50) to ensure text readability.",
+    "Do NOT use placeholder images. ONLY use the provided URLs in the 'media' object."
+  ]
+}
