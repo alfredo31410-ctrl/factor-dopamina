@@ -1,0 +1,42 @@
+{
+  "summary": "Full backend + frontend testing of Factor Dopamina. 12/12 backend pytest tests pass. Public site (Home/Cursos/Detail/Contacto) and Admin CRUD (login, list, create, edit, delete) all working. One minor frontend issue: admin logout button does not redirect to /admin/login.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "make_slug() in /api/admin/courses", "issue": "Underscore is stripped without word boundary so 'TEST_Curso' becomes 'testcurso' (joins two words). Consider replacing underscores with space before slugify."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "AdminDashboardPage logout", "issue": "Clicking admin-logout-button does not redirect to /admin/login; user stays on /admin (after 2s wait URL still /admin). Likely missing navigate('/admin/login') after logout() or auth state not clearing properly.", "selector": "[data-testid=\"admin-logout-button\"]", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [
+      {"flow": "Home featured courses", "issue": "Course cards on Home page did not match selector course-card-{slug} (count=0). They may use a different data-testid. Cursos page lists 6 cards correctly (5 seed + 1 test leftover at time of test).", "affected_selectors": ["[data-testid^=\"course-card-\"]"]}
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_factor_dopamina.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Fix admin logout flow: ensure navigate('/admin/login') runs after clearing auth state, or AuthContext logout clears token+user so route guard redirects.",
+    "Verify Home page featured course cards expose data-testid=\"course-card-{slug}\" (currently selector returned 0 on Home; works on /cursos).",
+    "Optional: improve make_slug to treat underscores as separators (current behavior strips them, joining words)."
+  ],
+  "critical_code_review_comments": [
+    "server.py is a single 462-line file mixing models, routes, auth, storage, seed; acceptable for MVP but consider splitting.",
+    "Cookie samesite='none' + secure=True is correct for cross-site HTTPS preview.",
+    "_id is excluded with projection {\"_id\":0} consistently — good.",
+    "Login does not rate-limit / lockout after N failures (playbook requires brute-force lockout after 5 fails) — not implemented.",
+    "Slug generation strips underscores without separator — see backend minor issue."
+  ],
+  "updated_files": ["/app/backend/tests/test_factor_dopamina.py"],
+  "success_rate": {"backend": "100%", "frontend": "~92% (logout flow failed)"},
+  "test_credentials": "admin@factordopamina.com / FactorDopamina2026!",
+  "seed_data_creation": "Created and deleted TEST_ courses during testing (cleanup completed via API and UI).",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Backend tests in /app/backend/tests/test_factor_dopamina.py — run with pytest. Frontend UI worked end-to-end except logout redirect. /cursos has 6 cards due to a leftover TEST course created during one run; final cleanup may have left it if a flow errored — verify count is back to 5.",
+  "rca_of_logout_issue": "Likely AuthContext.logout() does not navigate after clearing state, OR the ProtectedRoute does not re-evaluate immediately. Check /app/frontend/src/context/AuthContext.jsx and the logout handler in AdminDashboardPage."
+}
