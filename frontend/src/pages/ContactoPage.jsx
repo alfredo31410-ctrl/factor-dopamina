@@ -28,13 +28,13 @@ export default function ContactoPage() {
       <section className="border-b border-white/10 fd-molecular-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-32">
           <p className="fd-overline mb-6">// Contacto</p>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95]">
-            Hablemos <span className="text-[#CCFF00]">claro</span>.
-          </h1>
-          <p className="text-zinc-400 text-lg mt-6 max-w-2xl leading-relaxed">
-            Escríbenos para dudas sobre cursos, alianzas o invitaciones a la
-            comunidad. Respondemos rápido. Sin rodeos.
-          </p>
+<h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95]">
+  Hablemos <span className="text-[#CCFF00]">sin rodeos</span>.
+</h1>
+<p className="text-zinc-400 text-lg mt-6 max-w-2xl leading-relaxed">
+  ¿Tienes preguntas sobre cursos, alianzas o nuestra comunidad? 
+  Escríbenos y te responderemos rápido con claridad y precisión.
+</p>
         </div>
       </section>
 
@@ -53,7 +53,7 @@ export default function ContactoPage() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full bg-[#121212] border border-white/10 focus:border-[#CCFF00] outline-none text-white p-4 font-mono text-sm transition-colors"
-                placeholder="Tu nombre"
+                placeholder="Ingresa tu nombre completo"
                 data-testid="contact-name-input"
               />
             </div>
@@ -65,7 +65,7 @@ export default function ContactoPage() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full bg-[#121212] border border-white/10 focus:border-[#CCFF00] outline-none text-white p-4 font-mono text-sm transition-colors"
-                placeholder="tu@correo.com"
+                placeholder="ejemplo@correo.com"
                 data-testid="contact-email-input"
               />
             </div>
@@ -77,7 +77,7 @@ export default function ContactoPage() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="w-full bg-[#121212] border border-white/10 focus:border-[#CCFF00] outline-none text-white p-4 font-mono text-sm transition-colors resize-none"
-                placeholder="¿En qué podemos ayudarte?"
+                placeholder="Cuéntanos qué necesitas o cómo podemos ayudarte"
                 data-testid="contact-message-input"
               />
             </div>
@@ -97,7 +97,7 @@ export default function ContactoPage() {
             <Mail size={20} className="text-[#CCFF00] mb-3" />
             <p className="fd-overline mb-2">Email</p>
             <p className="text-white font-mono text-sm">
-              hola@factordopamina.com
+              contacto@factordopamina.com
             </p>
           </div>
           <div className="border border-white/10 p-6 bg-[#0A0A0A]">
@@ -109,7 +109,7 @@ export default function ContactoPage() {
             <MapPin size={20} className="text-[#CCFF00] mb-3" />
             <p className="fd-overline mb-2">Comunidad</p>
             <p className="text-white text-sm leading-relaxed">
-              Global · Habla hispana
+              Únete a nuestra comunidad global de habla hispana
             </p>
           </div>
         </div>
