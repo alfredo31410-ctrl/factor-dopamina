@@ -30,10 +30,7 @@ next-env.d.ts
 dist/
 dist
 
-# Environment files (comprehensive coverage)
 
-*token.json*
-*credentials.json*
 
 # Logs and debug files
 npm-debug.log*
@@ -51,6 +48,7 @@ __pycache__/
 *pyc*
 venv/
 .venv/
+backend/venv/
 
 # Development tools
 chainlit.md
@@ -88,3 +86,10 @@ credentials.json
 *.pem
 *.key
 .credentials
+*token.json
+*credentials.json*
+
+# Allow safe enviroment examples
+!.env.example
+!frontend/.env.example
+!backend/.env.example
