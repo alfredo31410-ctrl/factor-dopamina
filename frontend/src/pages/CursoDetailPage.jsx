@@ -20,12 +20,15 @@ export default function CursoDetailPage() {
       <div className="min-h-[60vh] flex items-center justify-center px-6">
         <div className="text-center" data-testid="course-not-found">
           <p className="fd-overline mb-4">// 404</p>
-          <h1 className="text-4xl font-black uppercase text-white mb-4">
-            Curso no encontrado
-          </h1>
-          <Link to="/cursos" className="fd-btn-secondary">
-            <ArrowLeft size={14} /> Volver a cursos
-          </Link>
+<h1 className="text-4xl font-black uppercase text-white mb-4">
+  Curso no encontrado
+</h1>
+<p className="text-zinc-400 mb-4">
+  Lo sentimos, el curso que buscas aún no está disponible o fue retirado.
+</p>
+<Link to="/cursos" className="fd-btn-secondary">
+  <ArrowLeft size={14} /> Regresar al catálogo
+</Link>
         </div>
       </div>
     );
@@ -34,7 +37,7 @@ export default function CursoDetailPage() {
   if (!course) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center text-zinc-500 font-mono text-sm uppercase tracking-widest animate-pulse">
-        Cargando...
+        Cargando detalles del curso...
       </div>
     );
   }
@@ -59,13 +62,13 @@ export default function CursoDetailPage() {
             </Link>
             <p className="fd-overline mb-4">// Programa</p>
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95] mb-6"
-              data-testid="course-title"
-            >
+              className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95] mb-6">
               {course.title}
             </h1>
             <p className="text-zinc-300 text-lg leading-relaxed mb-10 max-w-2xl">
               {course.short_description}
+                Aprende paso a paso, aplica los protocolos y transforma tu disciplina, enfoque y energía.
+
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               {course.hotmart_link ? (
@@ -118,6 +121,8 @@ export default function CursoDetailPage() {
         <div className="md:col-span-7 md:col-start-6">
           <p className="text-zinc-300 text-lg leading-relaxed whitespace-pre-line">
             {course.description}
+              Este programa te guiará para consolidar hábitos sólidos y resultados reales.
+
           </p>
         </div>
       </section>
@@ -151,6 +156,8 @@ export default function CursoDetailPage() {
                       {m.description && (
                         <p className="text-sm text-zinc-400 leading-relaxed">
                           {m.description}
+                              Aplica estos conceptos para mejorar tu rendimiento diario y mantener tu disciplina.
+
                         </p>
                       )}
                     </div>
@@ -166,11 +173,10 @@ export default function CursoDetailPage() {
       <section className="border-t border-white/10 fd-molecular-bg">
         <div className="max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white leading-tight mb-6">
-            ¿Listo para <span className="text-[#CCFF00]">empezar</span>?
+            ¿Listo para <span className="text-[#CCFF00]">transformarte?</span>?
           </h2>
           <p className="text-zinc-400 mb-10 max-w-xl mx-auto">
-            Una decisión separa al hombre que serás del que eres hoy. Hazla
-            ahora.
+            Solo una decisión te separa del hombre que quieres ser. Da el primer paso hoy.
           </p>
           {course.hotmart_link && (
             <a
