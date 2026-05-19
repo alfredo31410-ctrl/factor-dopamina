@@ -19,26 +19,26 @@ export default function CursosPage() {
     <div className="min-h-screen" data-testid="cursos-page">
       <section className="border-b border-white/10 fd-molecular-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-32">
-          <p className="fd-overline mb-6">// Catálogo</p>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95] max-w-3xl">
-            Cursos para <span className="text-[#CCFF00]">construirte</span>.
-          </h1>
-          <p className="text-zinc-400 text-lg mt-6 max-w-2xl leading-relaxed">
-            Programas diseñados para hombres con hambre. Cada uno es una ruta
-            clara hacia una versión más fuerte, enfocada y consciente.
-          </p>
+<p className="fd-overline mb-6">// Catálogo de transformación</p>
+<h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95] max-w-3xl">
+  Cursos para <span className="text-[#CCFF00]">forjar tu mejor versión</span>.
+</h1>
+<p className="text-zinc-400 text-lg mt-6 max-w-2xl leading-relaxed">
+  Programas intensivos diseñados para hombres que quieren disciplina, enfoque y resultados reales.
+  Cada curso es un camino claro hacia tu mejor versión.
+</p>
         </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
         {loading ? (
-          <div className="text-center py-32 text-zinc-500 font-mono text-sm uppercase tracking-widest animate-pulse">
-            Cargando cursos...
-          </div>
+<div className="text-center py-32 text-zinc-500 font-mono text-sm uppercase tracking-widest animate-pulse">
+  Cargando cursos destacados...
+</div>
         ) : courses.length === 0 ? (
-          <div className="text-center py-32 text-zinc-500 font-mono text-sm uppercase tracking-widest">
-            Próximamente. Vuelve pronto.
-          </div>
+<div className="text-center py-32 text-zinc-500 font-mono text-sm uppercase tracking-widest">
+  Próximamente nuevos programas. Mantente listo.
+</div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((c, idx) => (
@@ -67,7 +67,7 @@ export default function CursosPage() {
                     {c.short_description}
                   </p>
                   <div className="mt-6 flex items-center text-[#CCFF00] text-xs font-mono uppercase tracking-widest">
-                    Ver curso <ArrowRight size={12} className="ml-2" />
+                    Explorar curso <ArrowRight size={12} className="ml-2" />
                   </div>
                 </div>
               </Link>
