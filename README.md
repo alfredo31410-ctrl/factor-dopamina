@@ -32,6 +32,15 @@ El proyecto esta construido como una aplicacaion full-stack con frontend en Reac
 
 - MongoDB Atlas
 
+## Scripts útiles
+
+### Frontend
+
+Entrar a frontend:
+
+```powershell
+cd frontend
+
 ---
 
 ## Estructura general del proyecto
