@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const links = [
   { to: "/", label: "Inicio" },
-  { to: "/cursos", label: "Cursos" },
-  { to: "/contacto", label: "Contacto" },
+  { to: "/cursos", label: "Programas" },
+  { to: "/contacto", label: "Hablemos" },
 ];
 
 export default function Navbar() {
@@ -53,7 +53,7 @@ export default function Navbar() {
             className="fd-btn-primary text-xs"
             data-testid="navbar-cta-button"
           >
-            Ver Cursos
+            Explorar Programas
           </button>
         </nav>
 
@@ -93,7 +93,7 @@ export default function Navbar() {
             className="fd-btn-primary w-full"
             data-testid="mobile-cta-button"
           >
-            Ver Cursos
+            Explorar Programas
           </button>
         </div>
       )}
