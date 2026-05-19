@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../lib/api";
-import { ArrowRight, Atom, Brain, Flame, Target, Compass, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  Atom,
+  Brain,
+  Flame,
+  Target,
+  Compass,
+  Zap,
+} from "lucide-react";
 
 const HERO_BG =
   "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/d4808d43ae352dbec195e6e8331120b95352d2c3cebc5b566a935fb454f42a53.png";
@@ -9,19 +17,46 @@ const COMMUNITY_BG =
   "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/a16e1f5d58d8d516e431f0491bd9f4103668941f4188ccc435d690ad3352a070.png";
 
 const PILLARS = [
-  { icon: Flame, title: "Disciplina", text: "La habilidad que separa al hombre que dice del que hace." },
-  { icon: Target, title: "Enfoque", text: "Una atención quirúrgica en un mundo diseñado para distraerte." },
-  { icon: Zap, title: "Energía", text: "Tu combustible biológico. Recupéralo, multiplícalo." },
-  { icon: Compass, title: "Propósito", text: "Vivir con dirección, no a la deriva." },
-  { icon: Brain, title: "Mentalidad", text: "Reprogramar tu narrativa interna como un sistema operativo." },
-  { icon: Atom, title: "Rendimiento", text: "Ejecutar con precisión bajo presión, todos los días." },
+  {
+    icon: Flame,
+    title: "Disciplina",
+    text: "Convierte tus decisiones en acciones diarias.",
+  },
+  {
+    icon: Target,
+    title: "Enfoque",
+    text: "Atención absoluta en lo que realmente importa.",
+  },
+  {
+    icon: Zap,
+    title: "Energía",
+    text: "Potencia tu cuerpo y mente para rendir al máximo.",
+  },
+  {
+    icon: Compass,
+    title: "Propósito",
+    text: "Define tu rumbo y actúa con dirección.",
+  },
+  {
+    icon: Brain,
+    title: "Mentalidad",
+    text: "Programa tu mente para tomar control de tu vida.",
+  },
+  {
+    icon: Atom,
+    title: "Rendimiento",
+    text: "Maximiza resultados con eficiencia y constancia.",
+  },
 ];
 
 export default function HomePage() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    api.get("/courses?featured=true").then((r) => setFeatured(r.data || [])).catch(() => {});
+    api
+      .get("/courses?featured=true")
+      .then((r) => setFeatured(r.data || []))
+      .catch(() => {});
   }, []);
 
   return (
@@ -37,21 +72,33 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-24 w-full">
           <div className="max-w-3xl">
-            <p className="fd-overline mb-6 fd-fade-up">// Plataforma para hombres en evolución</p>
+            <p className="fd-overline mb-6 fd-fade-up">
+              // Transforma tu vida y tu rendimiento
+            </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-[0.95] mb-8 fd-fade-up">
-              Activa tu <br />
-              <span className="text-[#CCFF00] fd-text-glow">factor</span> <br />
-              dopamina.
+              Despierta tu{" "}
+              <span className="text-[#CCFF00] fd-text-glow">disciplina</span>,
+              <br />
+              potencia tu enfoque <br />y libera tu energía máxima.
             </h1>
             <p className="text-zinc-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed fd-fade-up">
-              Cursos, mentalidad y protocolos para hombres que decidieron dejar
-              de vivir en automático. Disciplina real. Energía real. Propósito real.
+              Entrena tu mente y hábitos con cursos, protocolos y estrategias
+              para hombres que quieren resultados reales. Disciplina auténtica.
+              Energía sostenible. Propósito claro.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 fd-fade-up">
-              <Link to="/cursos" className="fd-btn-primary" data-testid="hero-cta-cursos">
+              <Link
+                to="/cursos"
+                className="fd-btn-primary"
+                data-testid="hero-cta-cursos"
+              >
                 Ver cursos <ArrowRight size={16} />
               </Link>
-              <Link to="/contacto" className="fd-btn-secondary" data-testid="hero-cta-contacto">
+              <Link
+                to="/contacto"
+                className="fd-btn-secondary"
+                data-testid="hero-cta-contacto"
+              >
                 Habla con nosotros
               </Link>
             </div>
@@ -68,36 +115,46 @@ export default function HomePage() {
         <div className="fd-marquee-track flex gap-12 whitespace-nowrap will-change-transform">
           {Array.from({ length: 2 }).map((_, j) => (
             <div key={j} className="flex gap-12 items-center">
-              {["DISCIPLINA", "ENFOQUE", "ENERGÍA", "PROPÓSITO", "MENTALIDAD", "RENDIMIENTO", "TRANSFORMACIÓN"].map(
-                (w, i) => (
-                  <span
-                    key={`${j}-${i}`}
-                    className="text-5xl md:text-7xl font-black uppercase tracking-tight text-transparent"
-                    style={{ WebkitTextStroke: "1px rgba(255,255,255,0.18)" }}
-                  >
-                    {w} <span className="text-[#CCFF00]">/</span>
-                  </span>
-                )
-              )}
+              {[
+                "DISCIPLINA",
+                "ENFOQUE",
+                "ENERGÍA",
+                "PROPÓSITO",
+                "MENTALIDAD",
+                "RENDIMIENTO",
+                "TRANSFORMACIÓN",
+              ].map((w, i) => (
+                <span
+                  key={`${j}-${i}`}
+                  className="text-5xl md:text-7xl font-black uppercase tracking-tight text-transparent"
+                  style={{ WebkitTextStroke: "1px rgba(255,255,255,0.18)" }}
+                >
+                  {w} <span className="text-[#CCFF00]">/</span>
+                </span>
+              ))}
             </div>
           ))}
         </div>
       </section>
 
       {/* PILLARS */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-32" data-testid="pillars-section">
+      <section
+        className="max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-32"
+        data-testid="pillars-section"
+      >
         <div className="grid md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-5">
             <p className="fd-overline mb-4">// Los 6 Pilares</p>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
-              La fórmula de la <span className="text-[#CCFF00]">mejor versión</span> de ti.
+              La fórmula de la{" "}
+              <span className="text-[#CCFF00]">mejor versión</span> de ti.
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex items-end">
             <p className="text-zinc-400 text-lg leading-relaxed">
-              No es motivación de fin de semana. Es un sistema construido sobre seis
-              pilares medibles y entrenables, diseñado para hombres que quieren
-              resultados duraderos, no humo.
+              No es motivación de fin de semana. Es un sistema construido sobre
+              seis pilares medibles y entrenables, diseñado para hombres que
+              quieren resultados duraderos, no humo.
             </p>
           </div>
         </div>
@@ -122,7 +179,9 @@ export default function HomePage() {
                 <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-3">
                   {p.title}
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{p.text}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  {p.text}
+                </p>
               </div>
             );
           })}
@@ -138,11 +197,17 @@ export default function HomePage() {
           <div>
             <p className="fd-overline mb-4">// Cursos destacados</p>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white max-w-xl">
-              Programas para <span className="text-[#CCFF00]">forjar</span> al hombre que serás.
+              Programas diseñados para{" "}
+              <span className="text-[#CCFF00]">desarrollar</span> tu mejor
+              versión.
             </h2>
           </div>
-          <Link to="/cursos" className="fd-btn-secondary" data-testid="featured-view-all">
-            Ver todos <ArrowRight size={14} />
+          <Link
+            to="/cursos"
+            className="fd-btn-secondary"
+            data-testid="featured-view-all"
+          >
+            Explorar todos los cursos <ArrowRight size={14} />
           </Link>
         </div>
 
@@ -200,14 +265,20 @@ export default function HomePage() {
             <p className="fd-overline mb-6">// La comunidad</p>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-[1] mb-8">
               No caminas solo. <br />
-              <span className="text-[#CCFF00]">Caminas con quienes también deciden.</span>
+              <span className="text-[#CCFF00]">
+                Crece junto a quienes también actúan.
+              </span>
             </h2>
             <p className="text-zinc-300 text-lg leading-relaxed mb-10">
-              Factor Dopamina es más que cursos: es un círculo silencioso de hombres
-              que decidieron tomarse en serio. Construye contigo mismo.
-              Multiplica con otros.
+              Factor Dopamina es más que cursos: es un círculo de hombres
+              decididos a mejorar. Multiplica tu disciplina, enfoque y energía
+              junto a otros que también se esfuerzan.
             </p>
-            <Link to="/cursos" className="fd-btn-primary" data-testid="community-cta">
+            <Link
+              to="/cursos"
+              className="fd-btn-primary"
+              data-testid="community-cta"
+            >
               Empieza ahora <ArrowRight size={16} />
             </Link>
           </div>

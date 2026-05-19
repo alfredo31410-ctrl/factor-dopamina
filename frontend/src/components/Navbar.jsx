@@ -17,9 +17,15 @@ export default function Navbar() {
       data-testid="main-navbar"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2" data-testid="navbar-logo">
+        <Link
+          to="/"
+          className="flex items-center gap-2"
+          data-testid="navbar-logo"
+        >
           <div className="w-8 h-8 border border-[#CCFF00] flex items-center justify-center">
-            <span className="text-[#CCFF00] font-black text-sm font-mono">FD</span>
+            <span className="text-[#CCFF00] font-black text-sm font-mono">
+              FD
+            </span>
           </div>
           <span className="font-black tracking-tight text-white text-sm uppercase">
             Factor <span className="text-[#CCFF00]">Dopamina</span>

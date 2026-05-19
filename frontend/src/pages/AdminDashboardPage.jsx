@@ -40,7 +40,10 @@ export default function AdminDashboardPage() {
   const [loading, setLoading] = useState(true);
 
   const reload = () =>
-    api.get("/admin/courses").then((r) => setCourses(r.data || [])).finally(() => setLoading(false));
+    api
+      .get("/admin/courses")
+      .then((r) => setCourses(r.data || []))
+      .finally(() => setLoading(false));
 
   useEffect(() => {
     reload();
@@ -63,13 +66,18 @@ export default function AdminDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white" data-testid="admin-dashboard-page">
+    <div
+      className="min-h-screen bg-[#0A0A0A] text-white"
+      data-testid="admin-dashboard-page"
+    >
       {/* Top bar */}
       <header className="border-b border-white/10 bg-black sticky top-0 z-30">
         <div className="px-6 lg:px-10 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-8 h-8 border border-[#CCFF00] flex items-center justify-center">
-              <span className="text-[#CCFF00] font-black text-xs font-mono">FD</span>
+              <span className="text-[#CCFF00] font-black text-xs font-mono">
+                FD
+              </span>
             </div>
             <div>
               <p className="text-xs font-mono uppercase tracking-widest text-zinc-400">
@@ -119,7 +127,9 @@ export default function AdminDashboardPage() {
         </div>
 
         {loading ? (
-          <div className="text-center py-20 text-zinc-500 font-mono">Cargando...</div>
+          <div className="text-center py-20 text-zinc-500 font-mono">
+            Cargando...
+          </div>
         ) : courses.length === 0 ? (
           <div className="border border-dashed border-white/10 p-20 text-center">
             <p className="text-zinc-500 font-mono text-sm uppercase tracking-widest mb-4">
@@ -150,7 +160,11 @@ export default function AdminDashboardPage() {
               >
                 <div className="col-span-1">
                   {c.thumbnail ? (
-                    <img src={c.thumbnail} alt="" className="w-12 h-12 object-cover border border-white/10" />
+                    <img
+                      src={c.thumbnail}
+                      alt=""
+                      className="w-12 h-12 object-cover border border-white/10"
+                    />
                   ) : (
                     <div className="w-12 h-12 border border-white/10 flex items-center justify-center text-zinc-600">
                       <ImageIcon size={14} />
@@ -158,8 +172,12 @@ export default function AdminDashboardPage() {
                   )}
                 </div>
                 <div className="col-span-5">
-                  <p className="text-sm font-bold text-white truncate">{c.title}</p>
-                  <p className="text-xs text-zinc-500 truncate font-mono">/{c.slug}</p>
+                  <p className="text-sm font-bold text-white truncate">
+                    {c.title}
+                  </p>
+                  <p className="text-xs text-zinc-500 truncate font-mono">
+                    /{c.slug}
+                  </p>
                 </div>
                 <div className="col-span-2">
                   <span
@@ -169,7 +187,11 @@ export default function AdminDashboardPage() {
                         : "border-white/10 text-zinc-500"
                     }`}
                   >
-                    {c.status === "published" ? <Eye size={10} /> : <EyeOff size={10} />}
+                    {c.status === "published" ? (
+                      <Eye size={10} />
+                    ) : (
+                      <EyeOff size={10} />
+                    )}
                     {c.status === "published" ? "Publicado" : "Borrador"}
                   </span>
                 </div>
@@ -243,7 +265,9 @@ function CourseEditor({ initial, onClose, onSaved }) {
       setField("thumbnail", url);
       toast.success("Imagen subida");
     } catch (err) {
-      toast.error(formatApiError(err.response?.data?.detail) || "Error al subir");
+      toast.error(
+        formatApiError(err.response?.data?.detail) || "Error al subir",
+      );
     } finally {
       setUploading(false);
       e.target.value = "";
@@ -277,7 +301,9 @@ function CourseEditor({ initial, onClose, onSaved }) {
       }
       onSaved();
     } catch (e) {
-      toast.error(formatApiError(e.response?.data?.detail) || "Error al guardar");
+      toast.error(
+        formatApiError(e.response?.data?.detail) || "Error al guardar",
+      );
     } finally {
       setSaving(false);
     }
@@ -293,7 +319,7 @@ function CourseEditor({ initial, onClose, onSaved }) {
   const removeModule = (i) =>
     setField(
       "modules",
-      form.modules.filter((_, idx) => idx !== i)
+      form.modules.filter((_, idx) => idx !== i),
     );
 
   return (
@@ -400,7 +426,11 @@ function CourseEditor({ initial, onClose, onSaved }) {
             </div>
             {form.thumbnail && (
               <div className="mt-4 inline-block border border-white/10 p-2">
-                <img src={form.thumbnail} alt="" className="w-48 h-32 object-cover" />
+                <img
+                  src={form.thumbnail}
+                  alt=""
+                  className="w-48 h-32 object-cover"
+                />
               </div>
             )}
           </div>
@@ -435,7 +465,9 @@ function CourseEditor({ initial, onClose, onSaved }) {
                   />
                   <input
                     value={m.description}
-                    onChange={(e) => updateModule(i, "description", e.target.value)}
+                    onChange={(e) =>
+                      updateModule(i, "description", e.target.value)
+                    }
                     placeholder="Descripción breve"
                     className="fd-input col-span-5"
                   />
@@ -448,7 +480,9 @@ function CourseEditor({ initial, onClose, onSaved }) {
                 </div>
               ))}
               {form.modules.length === 0 && (
-                <p className="text-zinc-600 text-xs font-mono">Sin módulos definidos</p>
+                <p className="text-zinc-600 text-xs font-mono">
+                  Sin módulos definidos
+                </p>
               )}
             </div>
           </div>
@@ -496,7 +530,11 @@ function CourseEditor({ initial, onClose, onSaved }) {
         </div>
 
         <div className="flex justify-end gap-3 p-6 border-t border-white/10 sticky bottom-0 bg-[#0A0A0A]">
-          <button onClick={onClose} className="fd-btn-secondary" data-testid="editor-cancel">
+          <button
+            onClick={onClose}
+            className="fd-btn-secondary"
+            data-testid="editor-cancel"
+          >
             Cancelar
           </button>
           <button

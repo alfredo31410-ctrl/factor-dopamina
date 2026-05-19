@@ -38,7 +38,7 @@ El proyecto esta construido como una aplicacaion full-stack con frontend en Reac
 
 Entrar a frontend:
 
-```powershell
+````powershell
 cd frontend
 
 ---
@@ -60,3 +60,4 @@ factor-dopamina/
         .env
 
     README.md
+````

@@ -22,7 +22,9 @@ export default function AdminLoginPage() {
       await login(email, password);
       navigate("/admin");
     } catch (e2) {
-      setErr(formatApiError(e2.response?.data?.detail) || "Error al iniciar sesión");
+      setErr(
+        formatApiError(e2.response?.data?.detail) || "Error al iniciar sesión",
+      );
     } finally {
       setLoading(false);
     }
@@ -36,7 +38,9 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-14 h-14 border border-[#CCFF00] mb-6">
-            <span className="text-[#CCFF00] font-black font-mono text-lg">FD</span>
+            <span className="text-[#CCFF00] font-black font-mono text-lg">
+              FD
+            </span>
           </div>
           <p className="fd-overline mb-3">// Acceso restringido</p>
           <h1 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white">
@@ -44,7 +48,10 @@ export default function AdminLoginPage() {
           </h1>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-5 border border-white/10 bg-[#121212] p-8">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-5 border border-white/10 bg-[#121212] p-8"
+        >
           {err && (
             <div className="flex gap-2 items-start text-red-400 text-xs font-mono bg-red-500/10 border border-red-500/30 p-3">
               <AlertCircle size={14} className="mt-0.5 flex-shrink-0" />

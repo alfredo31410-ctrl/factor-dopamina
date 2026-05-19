@@ -15,7 +15,9 @@ export default function ContactoPage() {
       toast.success("Mensaje enviado. Te responderemos pronto.");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
-      toast.error(formatApiError(err.response?.data?.detail) || "Error al enviar");
+      toast.error(
+        formatApiError(err.response?.data?.detail) || "Error al enviar",
+      );
     } finally {
       setSubmitting(false);
     }
@@ -30,15 +32,19 @@ export default function ContactoPage() {
             Hablemos <span className="text-[#CCFF00]">claro</span>.
           </h1>
           <p className="text-zinc-400 text-lg mt-6 max-w-2xl leading-relaxed">
-            Escríbenos para dudas sobre cursos, alianzas o invitaciones a la comunidad.
-            Respondemos rápido. Sin rodeos.
+            Escríbenos para dudas sobre cursos, alianzas o invitaciones a la
+            comunidad. Respondemos rápido. Sin rodeos.
           </p>
         </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-7">
-          <form onSubmit={onSubmit} className="space-y-6" data-testid="contact-form">
+          <form
+            onSubmit={onSubmit}
+            className="space-y-6"
+            data-testid="contact-form"
+          >
             <div>
               <label className="fd-overline block mb-2">Nombre</label>
               <input
@@ -90,7 +96,9 @@ export default function ContactoPage() {
           <div className="border border-white/10 p-6 bg-[#0A0A0A]">
             <Mail size={20} className="text-[#CCFF00] mb-3" />
             <p className="fd-overline mb-2">Email</p>
-            <p className="text-white font-mono text-sm">hola@factordopamina.com</p>
+            <p className="text-white font-mono text-sm">
+              hola@factordopamina.com
+            </p>
           </div>
           <div className="border border-white/10 p-6 bg-[#0A0A0A]">
             <Instagram size={20} className="text-[#CCFF00] mb-3" />

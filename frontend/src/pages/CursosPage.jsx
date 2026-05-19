@@ -24,8 +24,8 @@ export default function CursosPage() {
             Cursos para <span className="text-[#CCFF00]">construirte</span>.
           </h1>
           <p className="text-zinc-400 text-lg mt-6 max-w-2xl leading-relaxed">
-            Programas diseñados para hombres con hambre. Cada uno es una ruta clara
-            hacia una versión más fuerte, enfocada y consciente.
+            Programas diseñados para hombres con hambre. Cada uno es una ruta
+            clara hacia una versión más fuerte, enfocada y consciente.
           </p>
         </div>
       </section>

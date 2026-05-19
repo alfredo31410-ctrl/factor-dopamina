@@ -20,7 +20,9 @@ export default function CursoDetailPage() {
       <div className="min-h-[60vh] flex items-center justify-center px-6">
         <div className="text-center" data-testid="course-not-found">
           <p className="fd-overline mb-4">// 404</p>
-          <h1 className="text-4xl font-black uppercase text-white mb-4">Curso no encontrado</h1>
+          <h1 className="text-4xl font-black uppercase text-white mb-4">
+            Curso no encontrado
+          </h1>
           <Link to="/cursos" className="fd-btn-secondary">
             <ArrowLeft size={14} /> Volver a cursos
           </Link>
@@ -87,7 +89,8 @@ export default function CursoDetailPage() {
               )}
               {course.price_label && (
                 <span className="inline-flex items-center gap-2 px-4 py-3 border border-white/10 text-xs font-mono uppercase tracking-widest text-zinc-300">
-                  <Sparkles size={14} className="text-[#CCFF00]" /> {course.price_label}
+                  <Sparkles size={14} className="text-[#CCFF00]" />{" "}
+                  {course.price_label}
                 </span>
               )}
             </div>
@@ -166,7 +169,8 @@ export default function CursoDetailPage() {
             ¿Listo para <span className="text-[#CCFF00]">empezar</span>?
           </h2>
           <p className="text-zinc-400 mb-10 max-w-xl mx-auto">
-            Una decisión separa al hombre que serás del que eres hoy. Hazla ahora.
+            Una decisión separa al hombre que serás del que eres hoy. Hazla
+            ahora.
           </p>
           {course.hotmart_link && (
             <a
