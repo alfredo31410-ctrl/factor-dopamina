@@ -13,43 +13,49 @@ export default function Footer() {
             <div className="w-10 h-10 border border-[#CCFF00] flex items-center justify-center">
               <span className="text-[#CCFF00] font-black font-mono">FD</span>
             </div>
+
             <span className="font-black tracking-tight text-white uppercase text-lg">
               Factor <span className="text-[#CCFF00]">Dopamina</span>
             </span>
           </div>
+
           <p className="text-zinc-500 text-sm leading-relaxed max-w-md">
-            La plataforma para hombres que decidieron dejar de vivir en
-            automático. Disciplina, energía y propósito — sin filtros, sin
-            atajos.
+            La plataforma para quienes decidieron dejar de vivir en automático.
+            Entrena tu disciplina, enfoque, energía y propósito con programas
+            diseñados para llevarte a tu siguiente versión.
           </p>
         </div>
 
         <div className="md:col-span-3">
           <p className="fd-overline mb-4">Navegación</p>
+
           <ul className="space-y-3 text-sm text-zinc-400">
             <li>
               <Link to="/" className="fd-link" data-testid="footer-link-home">
                 Inicio
               </Link>
             </li>
+
             <li>
               <Link
                 to="/cursos"
                 className="fd-link"
                 data-testid="footer-link-cursos"
               >
-                Cursos
+                Programas
               </Link>
             </li>
+
             <li>
               <Link
                 to="/contacto"
                 className="fd-link"
                 data-testid="footer-link-contacto"
               >
-                Contacto
+                Hablemos
               </Link>
             </li>
+
             <li>
               <Link
                 to="/admin"
@@ -64,28 +70,35 @@ export default function Footer() {
 
         <div className="md:col-span-4">
           <p className="fd-overline mb-4">Comunidad</p>
+
           <p className="text-sm text-zinc-400 mb-5">
-            Únete al circulo de hombres que están construyendo la mejor versión
-            de sí mismos.
+            Únete a una comunidad enfocada en construir mejores hábitos, más
+            claridad mental y una vida con dirección.
           </p>
+
           <div className="flex gap-3">
             <a
               href="#"
               data-testid="social-instagram"
+              aria-label="Instagram de Factor Dopamina"
               className="w-10 h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
             >
               <Instagram size={16} />
             </a>
+
             <a
               href="#"
               data-testid="social-twitter"
+              aria-label="Twitter de Factor Dopamina"
               className="w-10 h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
             >
               <Twitter size={16} />
             </a>
+
             <a
               href="#"
               data-testid="social-youtube"
+              aria-label="YouTube de Factor Dopamina"
               className="w-10 h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
             >
               <Youtube size={16} />
@@ -93,12 +106,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-zinc-600 font-mono uppercase tracking-wider">
           <span>
             © {new Date().getFullYear()} Factor Dopamina · factordopamina.com
           </span>
-          <span>Construido para hombres en evolución</span>
+
+          <span>Disciplina, enfoque y dirección para tu siguiente versión</span>
         </div>
       </div>
     </footer>
