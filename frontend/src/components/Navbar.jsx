@@ -11,6 +11,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/70 border-b border-white/10"
@@ -27,6 +28,7 @@ export default function Navbar() {
               FD
             </span>
           </div>
+
           <span className="font-black tracking-tight text-white text-sm uppercase">
             Factor <span className="text-[#CCFF00]">Dopamina</span>
           </span>
@@ -48,6 +50,7 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
+
           <button
             onClick={() => navigate("/cursos")}
             className="fd-btn-primary text-xs"
@@ -61,7 +64,7 @@ export default function Navbar() {
           className="md:hidden text-white"
           onClick={() => setOpen((o) => !o)}
           data-testid="navbar-mobile-toggle"
-          aria-label="Toggle menu"
+          aria-label="Abrir menú de navegación"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -85,6 +88,7 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
+
           <button
             onClick={() => {
               setOpen(false);
