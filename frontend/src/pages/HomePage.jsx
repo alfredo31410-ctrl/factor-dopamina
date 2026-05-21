@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 
 const HERO_BG =
-  "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/d4808d43ae352dbec195e6e8331120b95352d2c3cebc5b566a935fb454f42a53.png";
+  "/images/hero-factor-dopamina.jpg";
 const COMMUNITY_BG =
-  "https://static.prod-images.emergentagent.com/jobs/8ae7974f-7e96-40cd-96ba-4518b7997b9b/images/a16e1f5d58d8d516e431f0491bd9f4103668941f4188ccc435d690ad3352a070.png";
+  "/images/comunidad-factor-dopamina.jpg";
 
 const PILLARS = [
   {
@@ -253,37 +253,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COMMUNITY */}
-      <section className="relative border-t border-white/10 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${COMMUNITY_BG})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-32 md:py-40">
-          <div className="max-w-2xl">
-            <p className="fd-overline mb-6">// La comunidad</p>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-[1] mb-8">
-              No caminas solo. <br />
-              <span className="text-[#CCFF00]">
-                Crece junto a quienes también actúan.
-              </span>
-            </h2>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-10">
-              Factor Dopamina es más que cursos: es un círculo de hombres
-              decididos a mejorar. Multiplica tu disciplina, enfoque y energía
-              junto a otros que también se esfuerzan.
-            </p>
-            <Link
-              to="/cursos"
-              className="fd-btn-primary"
-              data-testid="community-cta"
-            >
-              Empieza ahora <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
+{/* COMMUNITY */}
+<section className="relative border-t border-white/10 overflow-hidden">
+  <img
+  src={COMMUNITY_BG}
+  alt="Comunidad Factor Dopamina"
+  className="absolute top-0 left-0 h-full w-[100%] max-w-none object-cover opacity-70 translate-x-[7%]"
+/>
+  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
+
+  <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-32 md:py-40">
+    <div className="max-w-2xl">
+      <p className="fd-overline mb-6">// La comunidad</p>
+      <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-[1] mb-8">
+        No caminas solo. <br />
+        <span className="text-[#CCFF00]">
+          Crece junto a quienes también actúan.
+        </span>
+      </h2>
+      <p className="text-zinc-300 text-lg leading-relaxed mb-10">
+        Factor Dopamina es más que cursos: es un círculo de hombres decididos a
+        mejorar. Multiplica tu disciplina, enfoque y energía junto a otros que
+        también se esfuerzan.
+      </p>
+      <Link
+        to="/cursos"
+        className="fd-btn-primary"
+        data-testid="community-cta"
+      >
+        Empieza ahora <ArrowRight size={16} />
+      </Link>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
