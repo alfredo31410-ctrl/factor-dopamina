@@ -4,17 +4,17 @@ import { Instagram, Twitter, Youtube } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="border-t border-white/10 bg-black mt-32"
+      className="border-t border-white/10 bg-black mt-20 md:mt-32"
       data-testid="main-footer"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid md:grid-cols-12 gap-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-14 md:py-20 grid md:grid-cols-12 gap-10 md:gap-12">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 border border-[#CCFF00] flex items-center justify-center">
+          <div className="flex items-center gap-3 mb-6 min-w-0">
+            <div className="w-10 h-10 shrink-0 border border-[#CCFF00] flex items-center justify-center">
               <span className="text-[#CCFF00] font-black font-mono">FD</span>
             </div>
 
-            <span className="font-black tracking-tight text-white uppercase text-lg">
+            <span className="font-black tracking-tight text-white uppercase text-base sm:text-lg truncate">
               Factor <span className="text-[#CCFF00]">Dopamina</span>
             </span>
           </div>
@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="md:col-span-4">
           <p className="fd-overline mb-4">Comunidad</p>
 
-          <p className="text-sm text-zinc-400 mb-5">
+          <p className="text-sm text-zinc-400 mb-5 max-w-md">
             Únete a una comunidad enfocada en construir mejores hábitos, más
             claridad mental y una vida con dirección.
           </p>
@@ -81,7 +81,7 @@ export default function Footer() {
               href="#"
               data-testid="social-instagram"
               aria-label="Instagram de Factor Dopamina"
-              className="w-10 h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
+              className="w-11 h-11 md:w-10 md:h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
             >
               <Instagram size={16} />
             </a>
@@ -90,7 +90,7 @@ export default function Footer() {
               href="#"
               data-testid="social-twitter"
               aria-label="Twitter de Factor Dopamina"
-              className="w-10 h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
+              className="w-11 h-11 md:w-10 md:h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
             >
               <Twitter size={16} />
             </a>
@@ -99,7 +99,7 @@ export default function Footer() {
               href="#"
               data-testid="social-youtube"
               aria-label="YouTube de Factor Dopamina"
-              className="w-10 h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
+              className="w-11 h-11 md:w-10 md:h-10 border border-white/10 hover:border-[#CCFF00] hover:text-[#CCFF00] text-zinc-400 flex items-center justify-center transition-colors"
             >
               <Youtube size={16} />
             </a>
@@ -108,7 +108,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-zinc-600 font-mono uppercase tracking-wider">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between gap-3 text-[10px] sm:text-xs text-zinc-600 font-mono uppercase tracking-wider leading-relaxed">
           <span>
             © {new Date().getFullYear()} Factor Dopamina · factordopamina.com
           </span>

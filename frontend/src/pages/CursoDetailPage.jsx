@@ -17,18 +17,22 @@ export default function CursoDetailPage() {
 
   if (notFound) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center px-6">
-        <div className="text-center" data-testid="course-not-found">
+      <div className="min-h-[60vh] flex items-center justify-center px-5 sm:px-6">
+        <div className="text-center max-w-xl" data-testid="course-not-found">
           <p className="fd-overline mb-4">// 404</p>
-<h1 className="text-4xl font-black uppercase text-white mb-4">
-  Curso no encontrado
-</h1>
-<p className="text-zinc-400 mb-4">
-  Lo sentimos, el curso que buscas aún no está disponible o fue retirado.
-</p>
-<Link to="/cursos" className="fd-btn-secondary">
-  <ArrowLeft size={14} /> Regresar al catálogo
-</Link>
+
+          <h1 className="text-3xl sm:text-4xl font-black uppercase text-white mb-4">
+            Curso no encontrado
+          </h1>
+
+          <p className="text-zinc-400 text-sm sm:text-base mb-6">
+            Lo sentimos, el curso que buscas aún no está disponible o fue
+            retirado.
+          </p>
+
+          <Link to="/cursos" className="fd-btn-secondary w-full sm:w-auto">
+            <ArrowLeft size={14} /> Regresar al catálogo
+          </Link>
         </div>
       </div>
     );
@@ -36,7 +40,7 @@ export default function CursoDetailPage() {
 
   if (!course) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center text-zinc-500 font-mono text-sm uppercase tracking-widest animate-pulse">
+      <div className="min-h-[60vh] flex items-center justify-center px-5 text-center text-zinc-500 font-mono text-xs sm:text-sm uppercase tracking-widest animate-pulse">
         Cargando detalles del curso...
       </div>
     );
@@ -47,36 +51,42 @@ export default function CursoDetailPage() {
       {/* HERO */}
       <section className="relative border-b border-white/10 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-25 md:opacity-30"
           style={{ backgroundImage: `url(${course.thumbnail})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-12">
+
+        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black via-black/90 to-black/70 md:to-black/60" />
+
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-7">
             <Link
               to="/cursos"
-              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-[#CCFF00] mb-8"
+              className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-[#CCFF00] mb-7 md:mb-8"
               data-testid="back-to-cursos"
             >
               <ArrowLeft size={14} /> Volver a cursos
             </Link>
+
             <p className="fd-overline mb-4">// Programa</p>
+
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95] mb-6">
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-[0.95] mb-6"
+              data-testid="course-title"
+            >
               {course.title}
             </h1>
-            <p className="text-zinc-300 text-lg leading-relaxed mb-10 max-w-2xl">
-              {course.short_description}
-                Aprende paso a paso, aplica los protocolos y transforma tu disciplina, enfoque y energía.
 
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-8 md:mb-10 max-w-2xl">
+              {course.short_description}
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4">
               {course.hotmart_link ? (
                 <a
                   href={course.hotmart_link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="fd-btn-primary"
+                  className="fd-btn-primary w-full sm:w-auto"
                   data-testid="hotmart-cta-button"
                 >
                   Comprar en Hotmart <ArrowRight size={16} />
@@ -84,22 +94,24 @@ export default function CursoDetailPage() {
               ) : (
                 <button
                   disabled
-                  className="fd-btn-primary opacity-50 cursor-not-allowed"
+                  className="fd-btn-primary w-full sm:w-auto opacity-50 cursor-not-allowed"
                   data-testid="hotmart-cta-disabled"
                 >
                   Próximamente
                 </button>
               )}
+
               {course.price_label && (
-                <span className="inline-flex items-center gap-2 px-4 py-3 border border-white/10 text-xs font-mono uppercase tracking-widest text-zinc-300">
+                <span className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/10 text-xs font-mono uppercase tracking-widest text-zinc-300 text-center">
                   <Sparkles size={14} className="text-[#CCFF00]" />{" "}
                   {course.price_label}
                 </span>
               )}
             </div>
           </div>
+
           <div className="md:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden border border-white/10">
+            <div className="aspect-[4/5] sm:aspect-[16/10] md:aspect-[4/5] overflow-hidden border border-white/10">
               <img
                 src={course.thumbnail}
                 alt={course.title}
@@ -111,18 +123,18 @@ export default function CursoDetailPage() {
       </section>
 
       {/* DESCRIPTION */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid md:grid-cols-12 gap-12">
+      <section className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20 grid md:grid-cols-12 gap-8 md:gap-12">
         <div className="md:col-span-4">
           <p className="fd-overline mb-3">// El curso</p>
+
           <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white">
             Lo que vas a <span className="text-[#CCFF00]">construir</span>.
           </h2>
         </div>
-        <div className="md:col-span-7 md:col-start-6">
-          <p className="text-zinc-300 text-lg leading-relaxed whitespace-pre-line">
-            {course.description}
-              Este programa te guiará para consolidar hábitos sólidos y resultados reales.
 
+        <div className="md:col-span-7 md:col-start-6">
+          <p className="text-zinc-300 text-base md:text-lg leading-relaxed whitespace-pre-line">
+            {course.description}
           </p>
         </div>
       </section>
@@ -130,34 +142,37 @@ export default function CursoDetailPage() {
       {/* MODULES */}
       {course.modules && course.modules.length > 0 && (
         <section className="border-t border-white/10 bg-[#070707]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-16 md:py-20">
             <p className="fd-overline mb-3">// Contenido</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white mb-12">
+
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white mb-10 md:mb-12">
               Módulos del programa
             </h2>
-            <div className="grid md:grid-cols-2 gap-px bg-white/10">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
               {course.modules.map((m, i) => (
                 <div
                   key={i}
-                  className="bg-[#0A0A0A] p-8 hover:bg-[#121212] transition-colors"
+                  className="bg-[#0A0A0A] p-6 md:p-8 hover:bg-[#121212] transition-colors"
                   data-testid={`module-${i}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="text-[#CCFF00] mt-1">
+                    <div className="text-[#CCFF00] mt-1 shrink-0">
                       <CheckCircle2 size={20} strokeWidth={1.5} />
                     </div>
+
                     <div>
                       <p className="text-xs font-mono text-zinc-500 mb-1 tracking-widest">
-                        0{i + 1}
+                        {String(i + 1).padStart(2, "0")}
                       </p>
-                      <h3 className="text-lg font-black uppercase tracking-tight text-white mb-2">
+
+                      <h3 className="text-base md:text-lg font-black uppercase tracking-tight text-white mb-2">
                         {m.title}
                       </h3>
+
                       {m.description && (
                         <p className="text-sm text-zinc-400 leading-relaxed">
                           {m.description}
-                              Aplica estos conceptos para mejorar tu rendimiento diario y mantener tu disciplina.
-
                         </p>
                       )}
                     </div>
@@ -171,19 +186,22 @@ export default function CursoDetailPage() {
 
       {/* FINAL CTA */}
       <section className="border-t border-white/10 fd-molecular-bg">
-        <div className="max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white leading-tight mb-6">
-            ¿Listo para <span className="text-[#CCFF00]">transformarte?</span>?
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-10 py-20 md:py-24 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-white leading-tight mb-6">
+            ¿Listo para <span className="text-[#CCFF00]">transformarte</span>?
           </h2>
-          <p className="text-zinc-400 mb-10 max-w-xl mx-auto">
-            Solo una decisión te separa del hombre que quieres ser. Da el primer paso hoy.
+
+          <p className="text-zinc-400 text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto">
+            Solo una decisión te separa del hombre que quieres ser. Da el primer
+            paso hoy.
           </p>
+
           {course.hotmart_link && (
             <a
               href={course.hotmart_link}
               target="_blank"
               rel="noopener noreferrer"
-              className="fd-btn-primary"
+              className="fd-btn-primary w-full sm:w-auto"
               data-testid="hotmart-cta-bottom"
             >
               Acceder al curso <ArrowRight size={16} />

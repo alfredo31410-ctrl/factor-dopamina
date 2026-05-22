@@ -5,17 +5,22 @@
 @tailwind utilities;
 
 :root {
-  --fd-bg: #0a0a0a;
-  --fd-surface: #121212;
-  --fd-surface-elevated: #1a1a1a;
+  --fd-bg: #050505;
+  --fd-surface: #0d0d0d;
+  --fd-surface-elevated: #151515;
+
   --fd-accent: #ccff00;
-  --fd-accent-hover: #d4ff33;
-  --fd-accent-glow: rgba(204, 255, 0, 0.4);
+  --fd-accent-hover: #d7ff3f;
+  --fd-accent-soft: rgba(204, 255, 0, 0.12);
+  --fd-accent-glow: rgba(204, 255, 0, 0.12);
+
   --fd-text: #ffffff;
-  --fd-text-secondary: #a1a1aa;
-  --fd-text-muted: #71717a;
+  --fd-text-secondary: #b4b4b4;
+  --fd-text-muted: #777783;
+
   --fd-border: rgba(255, 255, 255, 0.1);
-  --fd-border-accent: rgba(204, 255, 0, 0.2);
+  --fd-border-soft: rgba(255, 255, 255, 0.06);
+  --fd-border-accent: rgba(204, 255, 0, 0.38);
 }
 
 html,
@@ -58,13 +63,16 @@ h6 {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #1f1f1f;
   border-radius: 0;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--fd-accent);
 }
@@ -106,10 +114,12 @@ h6 {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
+
 .fd-marquee-track {
   animation: fd-marquee 30s linear infinite;
 }
@@ -118,6 +128,7 @@ h6 {
 .fd-glow {
   box-shadow: 0 0 24px 0 var(--fd-accent-glow);
 }
+
 .fd-text-glow {
   text-shadow: 0 0 24px var(--fd-accent-glow);
 }
@@ -139,11 +150,13 @@ h6 {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .fd-fade-up {
   animation: fd-fade-up 0.7s ease-out forwards;
 }
@@ -153,6 +166,7 @@ h6 {
   position: relative;
   transition: color 0.2s;
 }
+
 .fd-link::after {
   content: "";
   position: absolute;
@@ -163,9 +177,11 @@ h6 {
   background: var(--fd-accent);
   transition: width 0.3s ease;
 }
+
 .fd-link:hover::after {
   width: 100%;
 }
+
 .fd-link:hover {
   color: var(--fd-accent);
 }
@@ -188,11 +204,15 @@ h6 {
   cursor: pointer;
   font-size: 0.875rem;
 }
+
 .fd-btn-primary:hover {
   background: var(--fd-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 0 32px var(--fd-accent-glow);
+  box-shadow:
+    0 0 24px var(--fd-accent-glow),
+    0 12px 40px rgba(0, 0, 0, 0.45);
 }
+
 .fd-btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -210,9 +230,11 @@ h6 {
   cursor: pointer;
   font-size: 0.875rem;
 }
+
 .fd-btn-secondary:hover {
-  border-color: var(--fd-accent);
+  border-color: var(--fd-border-accent);
   color: var(--fd-accent);
+  background: var(--fd-accent-soft);
   transform: translateY(-2px);
 }
 
@@ -228,28 +250,73 @@ h6 {
 
 /* Card hover */
 .fd-card {
-  background: var(--fd-surface);
+  background: linear-gradient(
+    180deg,
+    var(--fd-surface-elevated),
+    var(--fd-surface)
+  );
   border: 1px solid var(--fd-border);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
 }
+
 .fd-card:hover {
   border-color: var(--fd-border-accent);
   transform: translateY(-4px);
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.38),
+    0 0 28px rgba(204, 255, 0, 0.08);
 }
 
 /* Molecular bg */
 .fd-molecular-bg {
   background-image:
     radial-gradient(
-      circle at 20% 20%,
-      rgba(204, 255, 0, 0.08) 0%,
-      transparent 40%
+      circle at 18% 22%,
+      rgba(204, 255, 0, 0.06) 0%,
+      transparent 38%
     ),
     radial-gradient(
-      circle at 80% 70%,
-      rgba(204, 255, 0, 0.05) 0%,
-      transparent 40%
+      circle at 82% 72%,
+      rgba(204, 255, 0, 0.045) 0%,
+      transparent 42%
     );
+}
+
+/* Responsive global refinements */
+@media (max-width: 640px) {
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+  }
+
+  .fd-btn-primary,
+  .fd-btn-secondary {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.035em;
+  }
+
+  .fd-overline {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+  }
+
+  .fd-card:hover {
+    transform: none;
+  }
+
+  .fd-btn-primary:hover,
+  .fd-btn-secondary:hover {
+    transform: none;
+  }
+
+  .fd-marquee-track {
+    animation-duration: 36s;
+  }
 }
