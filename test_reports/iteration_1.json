@@ -3,15 +3,27 @@
   "backend_issues": {
     "critical": [],
     "minor": [
-      {"endpoint": "make_slug() in /api/admin/courses", "issue": "Underscore is stripped without word boundary so 'TEST_Curso' becomes 'testcurso' (joins two words). Consider replacing underscores with space before slugify."}
+      {
+        "endpoint": "make_slug() in /api/admin/courses",
+        "issue": "Underscore is stripped without word boundary so 'TEST_Curso' becomes 'testcurso' (joins two words). Consider replacing underscores with space before slugify."
+      }
     ]
   },
   "frontend_issues": {
     "ui_bugs": [
-      {"component": "AdminDashboardPage logout", "issue": "Clicking admin-logout-button does not redirect to /admin/login; user stays on /admin (after 2s wait URL still /admin). Likely missing navigate('/admin/login') after logout() or auth state not clearing properly.", "selector": "[data-testid=\"admin-logout-button\"]", "priority": "MEDIUM"}
+      {
+        "component": "AdminDashboardPage logout",
+        "issue": "Clicking admin-logout-button does not redirect to /admin/login; user stays on /admin (after 2s wait URL still /admin). Likely missing navigate('/admin/login') after logout() or auth state not clearing properly.",
+        "selector": "[data-testid=\"admin-logout-button\"]",
+        "priority": "MEDIUM"
+      }
     ],
     "integration_issues": [
-      {"flow": "Home featured courses", "issue": "Course cards on Home page did not match selector course-card-{slug} (count=0). They may use a different data-testid. Cursos page lists 6 cards correctly (5 seed + 1 test leftover at time of test).", "affected_selectors": ["[data-testid^=\"course-card-\"]"]}
+      {
+        "flow": "Home featured courses",
+        "issue": "Course cards on Home page did not match selector course-card-{slug} (count=0). They may use a different data-testid. Cursos page lists 6 cards correctly (5 seed + 1 test leftover at time of test).",
+        "affected_selectors": ["[data-testid^=\"course-card-\"]"]
+      }
     ],
     "design_issues": []
   },
@@ -32,7 +44,10 @@
     "Slug generation strips underscores without separator — see backend minor issue."
   ],
   "updated_files": ["/app/backend/tests/test_factor_dopamina.py"],
-  "success_rate": {"backend": "100%", "frontend": "~92% (logout flow failed)"},
+  "success_rate": {
+    "backend": "100%",
+    "frontend": "~92% (logout flow failed)"
+  },
   "test_credentials": "admin@factordopamina.com / FactorDopamina2026!",
   "seed_data_creation": "Created and deleted TEST_ courses during testing (cleanup completed via API and UI).",
   "retest_needed": true,
